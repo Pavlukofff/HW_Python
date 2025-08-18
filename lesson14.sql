@@ -1,3 +1,7 @@
+create database lesson14;
+
+use lesson14;
+
 create table seller(
 	id int unsigned primary key auto_increment,
     company varchar(64) unique not null,
