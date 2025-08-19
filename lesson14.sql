@@ -10,17 +10,17 @@ create table seller(
 
 create table users(
 	id int unsigned primary key auto_increment,
-    username varchar(64) not null,
+    username varchar(64) unique not null,
     password varchar(64) not null,
-    email varchar(256) unique,
+    email varchar(256) unique not null,
     phone varchar(20) null
 );
 
 create table products(
 	id int unsigned primary key auto_increment,
     name varchar(256) not null,
-    cost int,
-    count int,
+    cost int not null,
+    count int not null,
     content text,
     seller_id int unsigned not null,
 
@@ -29,7 +29,7 @@ create table products(
 
 create table orders(
 	id int unsigned primary key auto_increment,
-    count int,
+    count int not null,
     user_id int unsigned not null,
     product_id int unsigned not null,
 
